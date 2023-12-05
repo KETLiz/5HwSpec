@@ -6,6 +6,11 @@ import java.io.BufferedReader;
 
 public class ReadFromFile {
 
+    /**
+     * Метод чтения данных из файла
+     * @param file название файла
+     * @return строку с содержимым файла
+     */
     public String readFromFile(String file) {
         try(FileReader reader = new FileReader(file)) {
             int i = 0;
@@ -20,13 +25,4 @@ public class ReadFromFile {
         return null;
     }
 
-    public void readFromFileV2(String file) {
-        try(BufferedReader br = new BufferedReader(new FileReader(file))) {
-            String res;
-            while ((res = br.readLine()) != null)
-                System.out.println(res);
-        } catch(IOException e) {
-            System.out.println("Что-то пошло не так");
-        }
-    }
 }
